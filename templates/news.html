@@ -1,0 +1,36 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+
+
+
+{% block title %}Station{% endblock title %}
+
+{% block content %}
+<h1 style="text-align: center;">{{ title }}</h1><h3 style="text-align: center;">{{ time_now|date:"d M Y"}}</h3>
+<p>&nbsp</p>
+        <table>
+            <tbody>
+                   <tr>
+                       <td style="width: 100px; text-align: center;">Id Статьи</td>
+                       <td style="width: 900px; text-align: center;">Заголовок</td>
+                       <td style="width: 250px; text-align: center;">Текст</td>
+                        <td style="width: 250px; text-align: center;">Рейтинг</td>
+                        <td style="width: 250px; text-align: center;">Дата написания</td>
+                   </tr>
+
+
+                    <tr>
+                        <td style="text-align: center">{{ article.id}}</td>
+                        <p>____________________________________________</p>
+                        <td style="text-align: center">{{ article.title }}</td>
+                        <td style="text-align: center">{{ article.text }}</td>
+                        <td style="text-align: center">{{ article.rating }}</td>
+                        <td style="text-align: center">{{ article.dateCreation }}</td>
+
+                    </tr>
+
+            </tbody>
+        </table>
+
+
+{% endblock %}
